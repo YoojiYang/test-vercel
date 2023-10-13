@@ -20,8 +20,9 @@ export default function Home() {
   useEffect(() => {
     fetchRooms(setRooms);
   }, []);
-
+  
   const fetchRooms = async (setRooms: Dispatch<SetStateAction<RoomType[]>>) => {
+    console.log('fetchRooms');
     try {
       const fetchedRooms = await fetchAllData("rooms");
       setRooms(fetchedRooms);
@@ -33,6 +34,7 @@ export default function Home() {
   return (
     <div>
       <h1>test</h1>
+      <button onClick={ () => fetchRooms(setRooms) }>テスト</button>
       <div>
         <p>
         rooms: {rooms[0]?.name}
