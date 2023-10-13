@@ -2,6 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { fetchAllData } from './utils/utils';
+import { NodeNextRequest } from 'next/dist/server/base-http/node';
 
 export type RoomType = {
   id: number;

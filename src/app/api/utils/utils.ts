@@ -38,9 +38,10 @@ export const genericGET = async (
       message: "Success",
       [responseKey]: data
     };
-    return NextResponse.json(responseObj, { status: 200 });
+
+    return NextResponse.json(responseObj, { status: 200, headers: { "Access-Control-Allow-Origin": "*" } });
   } catch (error) {
-    return NextResponse.json({ message: "Error", error }, { status: 500 });
+    return NextResponse.json({ message: "Error", error }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
   }
 };
 
